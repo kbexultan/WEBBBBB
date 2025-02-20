@@ -1,0 +1,57 @@
+
+<button (click)="toggleCategories()">
+    {{ showCategories ? 'Скрыть категории' : 'Показать категории' }}
+  </button>
+  
+ 
+  <div *ngIf="showCategories" class="categories">
+    <div *ngFor="let category of ProductsList">
+      <button class="categories-button"
+              [class.selected]="category === selectedCategory"
+              type="button"
+              (click)="onSelect(category)">
+        <h2 id="categoriesNames">{{ category.category }}</h2>
+      </button>
+    </div>
+
+  </div>
+  
+
+<div *ngIf="showCategories && selectedCategory">
+    <div class="Items" *ngFor="let productItem of selectedCategory.productItems">
+      <h3>
+        <a [href]="productItem.link" [title]="productItem.name + ' details'">
+          {{ productItem.name }}
+        </a>
+      </h3>
+      <p class="description">Description: {{ productItem.description }}</p>
+      <p>Price: ${{ productItem.price }}</p>
+      <p>Rating: {{ productItem.rating }}</p>
+      <img [src]="productItem.image" [alt]="productItem.name" width="100">
+      <div class="buttons">
+       
+        <button id="buttonShareWhatsapp" type="button">
+          <a 
+            id="shareWhatsapp" 
+            target="_blank"
+            [href]="'https://wa.me/?text=' + encodeURIComponent(productItem.name + ' ' + productItem.link)">
+            Share via WhatsApp
+          </a>
+        </button>
+   
+        <button id="buttonShareTelegram" type="button">
+          <a 
+            id="shareTelegram" 
+            target="_blank"
+            [href]="'https://t.me/share/url?url=' + encodeURIComponent(productItem.link) + '&text=' + encodeURIComponent(productItem.name)">
+            Share via Telegram
+          </a>
+        </button>
+  
+        <button id="likesButton" type="button" (click)="likeCount(productItem)">
+          Like {{ productItem.likes }}
+        </button>
+      </div>
+    </div>
+  </div>
+  

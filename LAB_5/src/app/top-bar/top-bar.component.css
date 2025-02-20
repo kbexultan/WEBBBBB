@@ -1,0 +1,22 @@
+#likesButton {
+    margin-left: 10px;
+    background-color: #9d534e;
+    font-weight: 600;
+    padding: 4px 8px;       
+    font-size: 0.8rem;      
+  }
+  
+  .totalLikes {
+    margin-left: 1150px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 4px 8px;      
+    width: auto;            
+    background-color: #7b6e54;
+  }
+  
+  .likesText {
+    color: white;
+    font-size: 18px;     
+  }
+  
