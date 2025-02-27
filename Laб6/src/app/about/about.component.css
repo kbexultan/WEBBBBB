@@ -1,0 +1,18 @@
+.about-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .about-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .about-container p {
+    color: #555;
+    line-height: 1.6;
+  }
+  

@@ -1,0 +1,9 @@
+<div class="photos-container">
+  <button class="return-button" [routerLink]="'/albums'">Вернуться назад</button>
+  <div *ngFor="let photo of data" class="photo-card">
+    <p class="photo-title">Photo</p>
+    <img [src]="photo.url" alt="Photo" width="600" height="600">
+    <p class="photo-title">Mini-photo</p>
+    <img [src]="photo.thumbnailUrl" alt="Thumbnail" width="150" height="150">
+  </div>
+</div>

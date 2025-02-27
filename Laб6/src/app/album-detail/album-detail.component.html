@@ -1,0 +1,15 @@
+<div class="detail-container" *ngIf="data">
+  <p><strong>UserId:</strong> {{ data.userId }}</p>
+  <p><strong>ID:</strong> {{ data.id }}</p>
+  <p><strong>Title:</strong> {{ data.title }}</p>
+  <div class="detail-links">
+    <a [routerLink]="'/albums/' + data.id + '/photos'" class="photos-link">Photos</a>
+  </div>
+  <div class="edit-section">
+    <input type="text" [(ngModel)]="data.title" placeholder="Новый заголовок">
+    <div class="buttons">
+      <button (click)="saveChanges(data)">Сохранить</button>
+      <button [routerLink]="'/albums'">Вернуться назад</button>
+    </div>
+  </div>
+</div>
